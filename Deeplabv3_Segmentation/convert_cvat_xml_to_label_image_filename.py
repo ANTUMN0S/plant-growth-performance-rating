@@ -65,15 +65,11 @@ def main(xml_directory, label_directory):
     label_classes_dict = defaultdict(int)
     label_classes_dict["Pot"] = 1
     label_classes_dict["Plant"] = 2
-    #label_classes_dict["Oil"] = 1
-    #label_classes_dict["Stain"] = 2
-    #label_classes_dict["Scratch"] = 3
 
     # Writing order of polygons :
     # When a pixel belongs to several polygons, the label image will
     # only contain the class id of the last class in the list below 
     label_priority_order = ["Pot", "Plant"]
-    #label_priority_order = ["Oil", "Scratch", "Stain"]
 
     # Create dataset directories
     dataset_labels_path = Path(label_directory)
