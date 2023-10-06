@@ -17,7 +17,7 @@ class DeepLabV3Wrapper(torch.nn.Module):
 def initialize_model(num_classes, backbone, keep_feature_extract=False, use_pretrained=True):
     """ DeepLabV3 pretrained on a subset of COCO train2017, on the 20 categories that are present in the Pascal VOC dataset.
     """
-    weights_folder = '/home/michael/Master/data/growth_performance/plant_segmentation/training_output'  # Specify the path to your weights folder
+    weights_folder = '/path/to/Deeplabv3_Segmentation/training_output'  # Specify the path to your weights folder
     weights_paths = []
     weights_filenames = ['Use pretrained backbone']
 
