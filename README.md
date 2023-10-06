@@ -3,7 +3,7 @@ This repository contains all the code relevant for my Master's thesis. The goal 
 
 I've compacted this pipeline in a little tkinter application that allows users to perform the estimation and see the results in a windowed format.
 
-Before running the script(s), be sure to execute "pip install -r requirements.txt" and "pip install -r requirements_git.txt", as well and "sudo apt-get install python3-tk ".
+Before running the script(s), be sure to execute "pip install -r requirements.txt" and "pip install -r requirements_git.txt", as well and "sudo apt-get install python3-tk ". Currently, the relative paths are setup so that you run the script from the plant-growth-performance-rating/Application directory and the Dataset is placed in the same directory you've installed the plant-growth-performance-rating directory.
 
 ## Directories
 ### Application
