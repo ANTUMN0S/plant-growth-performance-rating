@@ -5,7 +5,7 @@ I've compacted this pipeline in a little tkinter application that allows users t
 
 ## Directories
 ### Application
-This folder contains the scripts and joblib files required to run the biomass estimator. Currently, segmentation is handled by the Segment Anything Model (https://github.com/facebookresearch/segment-anything) and can be done with either text prompts or coordinates through clicking.
+This folder contains the scripts and joblib files required to run the biomass estimator. Currently, segmentation is handled by the Segment Anything Model (https://github.com/facebookresearch/segment-anything) and can be done with either text prompts (https://github.com/luca-medeiros/lang-segment-anything) or coordinates through clicking.
 
 ### Biomass Estimation
 Contains all the scripts needed to extract information from the segmentation masks and fit a linear regression model (used in the application)
