@@ -21,3 +21,4 @@ This folder contains additional scripts I've used, that are not neccessary to ru
 ## Related Dataset
 The application has been designed to work with the dataset I've generated during my Master's thesis (though it could be adjusted to work with any basil/plant dataset).
 Please read the description of the dataset on kaggle to understand what it is meant for, and what it can't do.
+https://kaggle.com/datasets/67d9266f5c2668ef352266e709902c48e5ace70be2c5c160127cae4c3fe50ccf
