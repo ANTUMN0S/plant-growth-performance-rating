@@ -27,10 +27,10 @@ def get_percentile_range(plant_age=int, dataframe=pd.DataFrame):
     return percentile_ranges
 
 # load the plant weight dataframe and create a dictionary holding the percentile ranges
-df = pd.read_csv('/home/michael/Master/plant_weights.csv')
+df = pd.read_csv('/path/to/dataset.csv')
 weeks = list(set(df['Week']))
 percentile_ranges = {f'{week}':get_percentile_range(week, df) for week in weeks}
-joblib.dump(percentile_ranges, 'full_percentile_ranges.joblib')
+joblib.dump(percentile_ranges, '../Application/full_percentile_ranges.joblib')
 
 #print(percentile_ranges)
 

@@ -7,10 +7,9 @@ import pandas as pd
 import cv2
 from tqdm import tqdm
 import numpy as np
-from scipy.ndimage import distance_transform_edt
 
 # Define the directory where the segmentation pictures are stored
-segmentation_dir = './Datasets/Bonus_Pictures/W9_partial/Labels'
+segmentation_dir = '/path/to/dataset'
 
 # Create an empty DataFrame to store the extracted information
 data = pd.DataFrame(columns=['Week', 'Plant', 'Angle', 'Pot_Diameter', 'Plant_Pixels'])
@@ -56,4 +55,4 @@ for file_name in tqdm(os.listdir(segmentation_dir)):
         data = pd.concat([data, dict_df], ignore_index=True)
 
 # Save the DataFrame to a CSV file
-data.to_csv('w9p_df.csv', index=False)
+data.to_csv('dataset.csv', index=False)
