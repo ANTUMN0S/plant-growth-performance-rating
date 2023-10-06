@@ -3,6 +3,8 @@ This repository contains all the code relevant for my Master's thesis. The goal 
 
 I've compacted this pipeline in a little tkinter application that allows users to perform the estimation and see the results in a windowed format.
 
+Before running the script(s), be sure to execute "pip install -r requirements.txt" and "pip install -r requirements_git.txt", as well and "sudo apt-get install python3-tk ".
+
 ## Directories
 ### Application
 This folder contains the scripts and joblib files required to run the biomass estimator. Currently, segmentation is handled by the Segment Anything Model (https://github.com/facebookresearch/segment-anything) and can be done with either text prompts (https://github.com/luca-medeiros/lang-segment-anything) or coordinates through clicking.
