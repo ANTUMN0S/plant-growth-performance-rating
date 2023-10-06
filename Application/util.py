@@ -39,7 +39,7 @@ def segmentation(image):
     '''
     # setup model
     model = torchvision.models.segmentation.DeepLabV3()
-    model.load_state_dict(torch.load('../data/growth_performance/plant_segmentation/training_output/best_DeepLabV3_mobilenet_v3_large_2023_07_11.pth'))
+    model.load_state_dict(torch.load('path/to/training_output/finetuned_weights.pth'))
     model.eval()
 
     # preprocess picture
@@ -126,6 +126,10 @@ def make_dataframe(segmentation_mask, file_path):
     # Extract information from the file name
     week = file_name.split('_')[1]
     capture_angle = file_name.split('_')[4]
+    if ".jpg" in capture_angle:
+        capture_angle = capture_angle.replace(".jpg", "")
+    elif ".png" in capture_angle:
+        capture_angle = capture_angle.replace(".png", "")  
 
     #convert the image to a NumPy array
     image_array = np.array(segmentation_mask)
@@ -164,6 +168,10 @@ def make_dataframe_from_array(image_array, file_path):
     # Extract information from the file name
     week = file_name.split('_')[1]
     capture_angle = file_name.split('_')[4]
+    if ".jpg" in capture_angle:
+        capture_angle = capture_angle.replace(".jpg", "")
+    elif ".png" in capture_angle:
+        capture_angle = capture_angle.replace(".png", "")
 
     # Create a mask to identify pot pixels (value 1)
     pot_mask = (image_array == 1)
@@ -196,8 +204,8 @@ def make_dataframe_from_array(image_array, file_path):
 
 def weight_estimation(df):
     # import the linear regression model and percentile ranges
-    regression_model = joblib.load('/home/michael/Master/Coding/sam_lr_model.joblib')
-    percentile_ranges = joblib.load('/home/michael/Master/full_percentile_ranges.joblib')
+    regression_model = joblib.load('./sam_lr_model.joblib')
+    percentile_ranges = joblib.load('./full_percentile_ranges.joblib')
 
     # estimate the weight
     weight = round(regression_model.predict(df[['plant_area', 'Week', 'Angle']])[0], 1)

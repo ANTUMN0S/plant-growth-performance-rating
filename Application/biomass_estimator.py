@@ -42,7 +42,7 @@ def clear_progress_text():
     progress_text.config(state=tk.DISABLED)  # Disable editing the text
 
 def load_image_from_explorer():
-    file_path = filedialog.askopenfilename(filetypes=[("Image Files", ["*.jpg", '*.png'])], initialdir='/home/michael/Master/Datasets') #path where images will be stored
+    file_path = filedialog.askopenfilename(filetypes=[("Image Files", ["*.jpg", '*.png'])], initialdir='../../Dataset') #path where images will be stored
     if file_path:
         open_image(file_path)
 
@@ -225,8 +225,9 @@ monitors = si.get_monitors()
 window_width = 600
 window_height = 900
 screen_width = monitors[0].width
+screen_width = 0
 screen_height = root.winfo_screenheight()
-x_position = monitors[1].width + (screen_width // 2) - int(window_width * 1.5)
+x_position = monitors[0].width + (screen_width // 2) - int(window_width * 2)
 y_position = (screen_height - window_height) // 2
 root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
