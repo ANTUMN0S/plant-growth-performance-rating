@@ -221,15 +221,17 @@ segmentation_mode = tk.IntVar(value=1)
 show_mask = tk.IntVar(value=1)
 
 # set window position
-monitors = si.get_monitors()
-window_width = 600
-window_height = 900
-screen_width = monitors[0].width
-screen_width = 0
-screen_height = root.winfo_screenheight()
-x_position = monitors[0].width + (screen_width // 2) - int(window_width * 2)
-y_position = (screen_height - window_height) // 2
-root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
+#monitors = si.get_monitors()
+width = 600
+height = 900
+screen_width = root.winfo_screenwidth()  # Width of the screen
+screen_height = root.winfo_screenheight() # Height of the screen
+ 
+# Calculate Starting X and Y coordinates for Window
+x = (screen_width/2) + (width/2)
+y = (screen_height/2) - (height/2)
+ 
+root.geometry('%dx%d+%d+%d' % (width, height, x, y))
 
 # Create a frame to hold the label with the image and the guide label
 image_frame = tk.Frame(root, bg="lightgray")
