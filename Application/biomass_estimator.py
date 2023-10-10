@@ -165,13 +165,13 @@ def open_image(file_path):
     selected_mode = handle_segmentation_mode()  # Get the selected mode
     
     if selected_mode == 'text':
-        update_progress("Segmenting your image...")
+        update_progress("Segmenting your image, please wait...")
         mask = segmentation_lang(original_image)
     elif selected_mode == 'click':
         update_progress("First click on the pot, then click on the plant...")
         coords = get_click_coordinates(display_image, original_image)
         if len(coords) == 2:  # Check if two coordinates were collected
-            update_progress("Continuing with segmentation...")
+            update_progress("Continuing with segmentation, please wait...")
             mask = segmentation_by_coordinates(coords, original_image)
         else:
             update_progress("Insufficient coordinates. Please try again.")
@@ -228,7 +228,7 @@ screen_width = root.winfo_screenwidth()  # Width of the screen
 screen_height = root.winfo_screenheight() # Height of the screen
  
 # Calculate Starting X and Y coordinates for Window
-x = (screen_width/2) + (width/2)
+x = (screen_width/2) - (width/2)
 y = (screen_height/2) - (height/2)
  
 root.geometry('%dx%d+%d+%d' % (width, height, x, y))
